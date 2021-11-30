@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+popUpTo = "homefrgment or anyother" use to it will remove/clear the all fragment that are in
+        back stack untill that fragment.
+ popUpToInclusive = "true" tells Home Fragment or Anyother fragment already in stack
+ so you go to the and open existing HomeFragment  rather then create new One
+-->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/nutiritionalFragment">
+
+    <fragment
+        android:id="@+id/nutiritionalFragment"
+        android:name="pack.program.nutritional.ui.nutritional.NutritionalFragment"
+        android:label="NutritionalFragment">
+        <action
+            android:id="@+id/action_nutiritionalFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="pack.program.nutritional.ui.detail.DetailFragment"
+        android:label="DetailFragment">
+        <argument
+            android:name="detail"
+            app:argType="com.androiddevs.mvvmnewsapp.model.Article" />
+    </fragment>
+</navigation>
